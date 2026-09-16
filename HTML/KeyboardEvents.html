@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: rgb(118, 118, 219);
+            }
+        .form {
+            align-items: center;
+            background-color: rgb(0, 228, 91);
+            margin: auto;
+            border: 5px;
+            background-color: rgb(162, 119, 62);
+            color: rgb(0, 0, 0);
+            padding: auto;
+            }
+            
+            .text{
+                font-style: italic;
+                font-weight: 100;
+                font-size: medium;
+                color: rgb(61, 76, 76);
+            }
+        </style>
+        <script>
+        function eventcall(){
+            alert("This is OneClick Function"); 
+        }
+        function section(){
+            alert("example of function 2");
+        }
+        </script>
+        </head>
+
+        <body>
+           <div id="form">
+            <h1>Keyboard Events</h1>
+            <p>onkeydown</p>
+            <input type="text" onkeydown="eventcall()">
+            <p>onkeyup</p>
+            <input type="text" onkeyup="section()">
+            <p>onkeypress</p>
+            <input type="text" onkeypress="eventcall()">
+            </div>
+        </body>
+</html> 

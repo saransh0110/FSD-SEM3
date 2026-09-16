@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Calculator</title>
+</head>
+<style>
+    body {
+        margin: 20px;
+        background-color: #28d147;
+    }
+
+    h2 {
+        text-align: center;
+        background-color: #3a3f7a
+        width: 400px;
+    }        
+
+    label {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    input[type="number"] {
+        text-align: center;
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    div {
+        align-content: center;
+        background-color: #e9e4e4;
+        align-items: center;
+        text-align: center;
+    }
+    
+</style>
+
+<body>
+    <div>
+    <h2>CALCULATOR</h2>
+
+    <label>Enter first number:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label>Enter second number:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+
+    <br><br>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculate(operator) {
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let answer;
+
+            if (operator == "+") {
+                answer = num1 + num2;
+            } else if (operator == "-") {
+                answer = num1 - num2;
+            } else if (operator == "*") {
+                answer = num1 * num2;
+            } else if (operator == "/") {
+                if (num2 == 0) {
+                    answer = "Cannot divide by zero";
+                } else {
+                    answer = num1 / num2;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Result: " + answer;
+        }
+    </script>
+    </div>
+</body>
+</html>

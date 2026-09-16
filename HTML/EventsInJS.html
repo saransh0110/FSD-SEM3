@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        #h1 {
+            color: hsl(0, 0%, 100%);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        p{
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            style: bold;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background-color: #f8f9ff;
+        }
+        
+        input[type="text"]:hover {
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div style="background-color: rgb(23, 27, 25);" border="20px" >
+        <h1 id="h1">KEYBOARD EVENTS</h1>
+        <div align="center" style="background-color: rgb(0, 228, 91);"">
+        <p>ondownkey</p>
+        <input type="text">
+        </div>
+        <div align="center" style="background-color: rgb(25, 178, 86);"">
+        <p>onkeyup</p>   
+        <input type="text">
+        </div>
+        <div align="center" style="background-color: rgb(16, 175, 80);"">
+        <p>onkeypress</p>
+        <input type="text">
+        </div>
+        </div>
+    </form>
+</body>
+</html>

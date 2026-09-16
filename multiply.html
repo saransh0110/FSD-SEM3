@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <title>Multiplication of Two Numbers</title>
+    <script>
+        function multiply(){
+            let a= Number(document.getElementById("a").value);
+            let b= Number(document.getElementById("b").value);
+            let result= a * b;
+            document.write("Result: " + result);
+        }
+    </script>
+    <head>
+    <div>
+        <label>Enter First Number:</label>
+        <input type="number" id="a"><br><br>
+        <label>Enter Second Number:</label>
+        <input type="number" id="b"><br><br>
+        <button onclick="multiply()">Calculate</button>
+        <h3>Result: <span id="result"></span></h3>
+    </div>
+</head>
