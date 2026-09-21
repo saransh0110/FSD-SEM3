@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Form</title>
+
+    <style>
+        body {
+            background-color: rgb(118, 118, 219);
+        }
+
+        .details {
+            background-color: rgb(102, 102, 80);
+            padding: 50px;
+            margin: 50px auto;
+            width: 400px;
+            text-align: center;
+        }
+
+        .questions {
+            background-color: rgb(178, 178, 143);
+            padding: 50px;
+            margin: 50px auto;
+            width: 400px;
+        }
+
+        .questions h3 {
+            margin-bottom: 10px;
+        }
+
+        .option {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="submit_quiz.php" method="post">
+
+            <h1 style="text-align: center;">Quiz Form</h1>
+
+            <div class="details">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="RollNo">Roll No:</label>
+            <input type="text" id="RollNo" name="RollNo" required>
+            <br><br>
+
+            <label for="Branch">Branch:</label>
+            <input type="text" id="Branch" name="Branch" required>
+            <br><br>
+
+        </div>
+
+        <div class="questions">
+
+            <h3>Question 1: What does HTML stand for?</h3>
+
+            <div class="option">
+                <input type="radio" id="option1" name="question1" value="A" required>
+                <label for="option1">A. Hyper Text Markup Language</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="option2" name="question1" value="B">
+                <label for="option2">B. High Text Machine Language</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="option3" name="question1" value="C">
+                <label for="option3">C. Hyperlink Text Management Language</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="option4" name="question1" value="D">
+                <label for="option4">D. Home Tool Markup Language</label>
+            </div>
+
+
+            <br>
+
+
+            <h3>Question 2: What does CSS stand for?</h3>
+
+            <div class="option">
+                <input type="radio" id="option1" name="question2" value="A" required>
+                <label for="option1">A. Computer Style Sheets</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="option2" name="question2" value="B">
+                <label for="option2">B. Cascading Style Sheets</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="option3" name="question2" value="C">
+                <label for="option3">C. Colorful Style Sheets</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="option4" name="question2" value="D">
+                <label for="option4">D. Creative Style Sheets</label>
+            </div>
+
+            <br>
+
+            <button type="submit">Submit Quiz</button>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>
