@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Form</title>
+
+    <title>Online Quiz</title>
+
     <link rel="stylesheet" href="quiz_style.css">
 </head>
 
@@ -15,89 +17,102 @@
         <div class="quiz-header">
 
             <h1>Quiz Form</h1>
+
             <p id="studentName"></p>
+
         </div>
 
 
-        <div class="question-box">
-             <h3>Question 1: What does HTML stand for?</h3>
+        <form id="quizForm">
 
-            <div class="option">
-                <input type="radio" id="option1" name="question1" value="A" required>
-                <label for="option1">A. Hyper Text Markup Language</label>
+            <!-- Question 1 -->
+
+            <div class="question-box">
+
+                <h3>
+                    Question 1: What does HTML stand for?
+                </h3>
+
+                <div class="option">
+                    <input type="radio" id="q1a" name="question1" value="A">
+                    <label for="q1a">
+                        A. Hyper Text Markup Language
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="q1b" name="question1" value="B">
+                    <label for="q1b">
+                        B. High Text Machine Language
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="q1c" name="question1" value="C">
+                    <label for="q1c">
+                        C. Hyperlink Text Management Language
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="q1d" name="question1" value="D">
+                    <label for="q1d">
+                        D. Home Tool Markup Language
+                    </label>
+                </div>
+
             </div>
 
-            <div class="option">
-                <input type="radio" id="option2" name="question1" value="B">
-                <label for="option2">B. High Text Machine Language</label>
+
+            <!-- Question 2 -->
+
+            <div class="question-box">
+
+                <h3>
+                    Question 2: What does CSS stand for?
+                </h3>
+
+                <div class="option">
+                    <input type="radio" id="q2a" name="question2" value="A">
+                    <label for="q2a">
+                        A. Computer Style Sheets
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="q2b" name="question2" value="B">
+                    <label for="q2b">
+                        B. Cascading Style Sheets
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="q2c" name="question2" value="C">
+                    <label for="q2c">
+                        C. Colorful Style Sheets
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="q2d" name="question2" value="D">
+                    <label for="q2d">
+                        D. Creative Style Sheets
+                    </label>
+                </div>
+
             </div>
 
-            <div class="option">
-                <input type="radio" id="option3" name="question1" value="C">
-                <label for="option3">C. Hyperlink Text Management Language</label>
-            </div>
 
-            <div class="option">
-                <input type="radio" id="option4" name="question1" value="D">
-                <label for="option4">D. Home Tool Markup Language</label>
-            </div>
+            <button type="submit" id="submitbutton">
+                Submit
+            </button>
 
-            <br><br>
-
-            <h3>Question 2: What does CSS stand for?</h3>
-
-            <div class="option">
-                <input type="radio" id="option1" name="question2" value="A" required>
-                <label for="option1">A. Computer Style Sheets</label>
-            </div>
-
-            <div class="option">
-                <input type="radio" id="option2" name="question2" value="B">
-                <label for="option2">B. Cascading Style Sheets</label>
-            </div>
-
-            <div class="option">
-                <input type="radio" id="option3" name="question2" value="C">
-                <label for="option3">C. Colorful Style Sheets</label>
-            </div>
-
-            <div class="option">
-                <input type="radio" id="option4" name="question2" value="D">
-                <label for="option4">D. Creative Style Sheets</label>
-            </div>
-
-            <br><br>
-
-            <h3>Question 2: What does CSS stand for?</h3>
-
-            <div class="option">
-                <input type="radio" id="option1" name="question2" value="A" required>
-                <label for="option1">A. Computer Style Sheets</label>
-            </div>
-
-            <div class="option">
-                <input type="radio" id="option2" name="question2" value="B">
-                <label for="option2">B. Cascading Style Sheets</label>
-            </div>
-
-            <div class="option">
-                <input type="radio" id="option3" name="question2" value="C">
-                <label for="option3">C. Colorful Style Sheets</label>
-            </div>
-
-            <div class="option">
-                <input type="radio" id="option4" name="question2" value="D">
-                <label for="option4">D. Creative Style Sheets</label>
-            </div>
-
-        <button id="submitbutton">
-                    Submit
-                </button>
+        </form>
 
     </div>
 
 
-    <script src="Quiz.js"></script>
+    <script src="quiz.js"></script>
 
 </body>
 

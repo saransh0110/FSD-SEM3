@@ -15,41 +15,85 @@ if (studentData) {
 }
 
 
-// Get Next button
+// Get quiz form
 
-const nextButton = document.getElementById("nextButton");
+const quizForm = document.getElementById("quizForm");
 
 
-// Next button click event
+// Submit quiz
 
-nextButton.addEventListener("click", function () {
+quizForm.addEventListener("submit", function (event) {
 
-    const selectedAnswer = document.querySelector(
+    event.preventDefault();
+
+
+    // Get selected answers
+
+    const answer1 = document.querySelector(
         'input[name="question1"]:checked'
     );
 
+    const answer2 = document.querySelector(
+        'input[name="question2"]:checked'
+    );
 
-    // Check whether an option was selected
 
-    if (!selectedAnswer) {
+    // Check if all questions are answered
 
-        alert("Please select an answer.");
+    if (!answer1 || !answer2) {
+
+        alert("Please answer all questions.");
 
         return;
 
     }
 
 
-    // Check answer
+    // Calculate score
 
-    if (selectedAnswer.value === "B") {
+    let score = 0;
 
-        alert("Correct Answer!");
 
-    } else {
+    // Question 1 correct answer = A
 
-        alert("Wrong Answer!");
-
+    if (answer1.value === "A") {
+        score++;
     }
+
+
+    // Question 2 correct answer = B
+
+    if (answer2.value === "B") {
+        score++;
+    }
+
+
+    // Save score
+
+    localStorage.setItem(
+        "quizScore",
+        score
+    );
+
+
+    // Show score as popup
+
+    alert(
+        "Your Score: " + score + " / 2"
+    );
+
+
+    // Disable submit button
+
+    document.getElementById("submitbutton").disabled = true;
+
+
+    // Move to thank-you page after 3 seconds
+
+    setTimeout(function () {
+
+        window.location.href = "outro.html";
+
+    }, 3000);
 
 });
