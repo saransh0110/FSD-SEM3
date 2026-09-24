@@ -37,45 +37,29 @@ studentForm.addEventListener("submit", function (event) {
         JSON.stringify(studentData)
     );
 
-
     // Confirmation message
     alert("Details saved successfully!");
 
-
     // Move to quiz page
     window.location.href = "quiz.html";
-
 });
 
-
-// ------------------------------------
 // MOUSE EVENT
-// ------------------------------------
 
 startQuiz.addEventListener("mouseover", function () {
-
     startQuiz.style.transform = "scale(1.03)";
-
 });
 
 
 startQuiz.addEventListener("mouseout", function () {
-
     startQuiz.style.transform = "scale(1)";
-
 });
 
 
-// ------------------------------------
 // KEYBOARD EVENT
-// ------------------------------------
-
 document.addEventListener("keydown", function (event) {
-
     if (event.key === "Enter") {
-
         console.log("Enter key pressed");
-
     }
 
 });
