@@ -46,8 +46,25 @@ body {
     font-size: 18px;
 
     color: #555;
+
+    margin-bottom: 15px;
 }
 
+
+/* Timer */
+
+#timer {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #007bff;
+
+    margin-bottom: 10px;
+}
+
+
+/* Questions */
 
 .question-box {
     margin-bottom: 25px;
@@ -98,6 +115,8 @@ body {
     cursor: pointer;
 }
 
+
+/* Submit button */
 
 #submitbutton {
     width: 100%;

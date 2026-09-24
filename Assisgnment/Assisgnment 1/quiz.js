@@ -15,16 +15,74 @@ if (studentData) {
 }
 
 
-// Get quiz form
+// -------------------------
+// TIMER
+// -------------------------
+
+let timeLeft = 1 * 60; // 1 minute
+
+const timer = document.getElementById("timer");
+
+let quizSubmitted = false;
+
+
+const countdown = setInterval(function () {
+
+    let minutes = Math.floor(timeLeft / 60);
+
+    let seconds = timeLeft % 60;
+
+
+    // Add 0 before single digit numbers
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+
+    // Display timer
+
+    timer.textContent =
+        "Time Left: " + minutes + ":" + seconds;
+
+
+    // Time is over
+
+    if (timeLeft <= 0) {
+
+        clearInterval(countdown);
+
+        quizSubmitted = true;
+
+        alert("Time is over! Your quiz has been submitted.");
+
+        window.location.href = "outro.html";
+
+    }
+
+
+    timeLeft--;
+
+}, 1000);
+
+
+// -------------------------
+// QUIZ SUBMISSION
+// -------------------------
 
 const quizForm = document.getElementById("quizForm");
 
 
-// Submit quiz
-
 quizForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
+
+
+    // Prevent submission if timer has already ended
+
+    if (quizSubmitted) {
+        return;
+    }
 
 
     // Get selected answers
@@ -68,6 +126,13 @@ quizForm.addEventListener("submit", function (event) {
     }
 
 
+    // Stop timer
+
+    clearInterval(countdown);
+
+    quizSubmitted = true;
+
+
     // Save score
 
     localStorage.setItem(
@@ -76,7 +141,7 @@ quizForm.addEventListener("submit", function (event) {
     );
 
 
-    // Show score as popup
+    // Show score
 
     alert(
         "Your Score: " + score + " / 2"
@@ -88,7 +153,7 @@ quizForm.addEventListener("submit", function (event) {
     document.getElementById("submitbutton").disabled = true;
 
 
-    // Move to thank-you page after 3 seconds
+    // Move to thank-you page
 
     setTimeout(function () {
 
