@@ -154,11 +154,8 @@ quizForm.addEventListener("submit", function (event) {
 
 
     // Move to thank-you page
-
     setTimeout(function () {
-
         window.location.href = "outro.html";
-
     }, 3000);
 
 });

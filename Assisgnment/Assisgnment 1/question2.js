@@ -1,16 +1,14 @@
+
 // QUESTION 2 TIMER
 
-let question2TimeLeft = 60; // 1 minute
+let question2TimeLeft = 60;
 
 let question2Countdown;
-
-
-// Get timer
 
 const timer2 = document.getElementById("timer");
 
 
-// Update timer display
+// Update timer
 
 function updateQuestion2Timer() {
 
@@ -18,11 +16,9 @@ function updateQuestion2Timer() {
 
     let seconds = question2TimeLeft % 60;
 
-
     minutes = minutes < 10 ? "0" + minutes : minutes;
 
     seconds = seconds < 10 ? "0" + seconds : seconds;
-
 
     timer2.textContent =
         "Time Left: " + minutes + ":" + seconds;
@@ -37,15 +33,11 @@ function startQuestion2Timer() {
 
     updateQuestion2Timer();
 
-
     question2Countdown = setInterval(function () {
 
         question2TimeLeft--;
 
         updateQuestion2Timer();
-
-
-        // Time is over
 
         if (question2TimeLeft <= 0) {
 
@@ -58,55 +50,58 @@ function startQuestion2Timer() {
         }
 
     }, 1000);
-
 }
 
 
 // -------------------------
-// KEYBOARD EVENT
+// KEYBOARD EVENTS
 // -------------------------
+
+const question2Select =
+    document.getElementById("question2Select");
+
 
 document.addEventListener("keydown", function (event) {
 
-    // A → Option A
+    // A → Select A
 
     if (event.key === "a" || event.key === "A") {
 
-        document.getElementById("q2a").checked = true;
+        question2Select.value = "A";
 
     }
 
 
-    // B → Option B
+    // B → Select B
 
-    if (event.key === "b" || event.key === "B") {
+    else if (event.key === "b" || event.key === "B") {
 
-        document.getElementById("q2b").checked = true;
-
-    }
-
-
-    // C → Option C
-
-    if (event.key === "c" || event.key === "C") {
-
-        document.getElementById("q2c").checked = true;
+        question2Select.value = "B";
 
     }
 
 
-    // D → Option D
+    // C → Select C
 
-    if (event.key === "d" || event.key === "D") {
+    else if (event.key === "c" || event.key === "C") {
 
-        document.getElementById("q2d").checked = true;
+        question2Select.value = "C";
+
+    }
+
+
+    // D → Select D
+
+    else if (event.key === "d" || event.key === "D") {
+
+        question2Select.value = "D";
 
     }
 
 
     // Enter → Submit
 
-    if (event.key === "Enter") {
+    else if (event.key === "Enter") {
 
         document.getElementById("submitbutton").click();
 
@@ -119,7 +114,8 @@ document.addEventListener("keydown", function (event) {
 // SUBMIT QUIZ
 // -------------------------
 
-const quizForm = document.getElementById("quizForm");
+const quizForm =
+    document.getElementById("quizForm");
 
 
 quizForm.addEventListener("submit", function (event) {
@@ -127,25 +123,24 @@ quizForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
 
-    // Get Question 2 answer
+    // Get selected answer
 
-    const answer2 = document.querySelector(
-        'input[name="question2"]:checked'
-    );
+    const answer2 =
+        question2Select.value;
 
 
-    // Check if Question 2 is answered
+    // Check answer
 
-    if (!answer2) {
+    if (answer2 === "") {
 
-        alert("Please answer Question 2.");
+        alert("Please select an answer.");
 
         return;
 
     }
 
 
-    // Stop Question 2 timer
+    // Stop timer
 
     clearInterval(question2Countdown);
 
@@ -156,9 +151,7 @@ quizForm.addEventListener("submit", function (event) {
         localStorage.getItem("question1Answer");
 
 
-    // -------------------------
-    // CALCULATE SCORE
-    // -------------------------
+    // Calculate score
 
     let score = 0;
 
@@ -174,7 +167,7 @@ quizForm.addEventListener("submit", function (event) {
 
     // Question 2 correct answer = B
 
-    if (answer2.value === "B") {
+    if (answer2 === "B") {
 
         score++;
 
@@ -189,23 +182,21 @@ quizForm.addEventListener("submit", function (event) {
     );
 
 
-    // -------------------------
-    // SHOW SCORE
-    // -------------------------
+    // Show score
 
     alert(
         "Your Score: " + score + " / 2"
     );
 
 
-    // Disable submit button
+    // Disable submit
 
-    document.getElementById("submitbutton").disabled = true;
+    document.getElementById(
+        "submitbutton"
+    ).disabled = true;
 
 
-    // -------------------------
-    // GO TO OUTRO PAGE
-    // -------------------------
+    // Go to outro page
 
     setTimeout(function () {
 
